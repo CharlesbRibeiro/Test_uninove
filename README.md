@@ -1,2 +1,5 @@
 # Test_uninove
-Repositorio do teste do processo de seleção
+
+Repositorio do Processo seletivo
+
+Os codigos foram desenvolvidos no ambiente de desenvolvimento integrado ou (IDE) Sypder.
