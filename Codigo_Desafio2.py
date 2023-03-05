@@ -62,7 +62,7 @@ df.isna().sum()
     #  Restruturando os tipos das variaveis presentes no conjunto de dados,
     #  afim de conseguir realizar analises e tambem para implementação de alguma tecnica,
     #  Por exemplo se as varaiveis do conjunto de dados apresentam ser numericas porem se seu 
-    #  type não quando formos por exemplo utilizar algum tecnica por exemplo: matriz de correlação,
+    #  type não for ideal, quando formos por exemplo utilizar algum tecnica por exemplo: matriz de correlação,
     #  a linguagem python não entendera, dificultando a anlise dos dados. 
 
 df["Temperature (K)"] = pd.to_numeric(df["Temperature (K)"])
@@ -174,8 +174,8 @@ from sklearn.model_selection import train_test_split
 
 # Criando um novo conjunto de dados
     # Devido ao fato do conjunto de dados original apresentar valores null (ou ausentes),
-    # Decide criar um copia do dataframe sem os dados ausentes, isso se deve pois para implementação
-    # alguns modelos de machine learning e necessario remover esses conjuntos (null) ou utilizar alguma
+    # Decide criar um copia do dataframe sem os dados ausentes, isso se deve pois para implementação de
+    # alguns modelos de machine learning e necessario remover esses conjuntos (null) ou utilizar algumas
     # tecnicas como Forward and Backward Propagation para substituir esses valores.
 
 df2 = df.dropna(how='any',axis=0) 
@@ -184,7 +184,7 @@ df2 = df.dropna(how='any',axis=0)
 # Utilizando a tecnica LabelEnconder
     # Codificamos as variaveis categoricas em valores numerico, sendo assim
     # a função labelEncoder codifica os rotulos com um valor entre 0 e numero de
-    # rotulos
+    # rotulos ideal.
 
 labelencoder = LabelEncoder()
 
@@ -206,8 +206,8 @@ scaled_train_features = scaler.fit_transform(features)
 
 
 # Criando um variavel PCA (Ou Analise de componentes pricipais)
-    # Como o propio no diz o intuito dessa tecanica e verificar quais
-    # são as principais variaveis (ou componetes) que apresenta um certo nivel de
+    # Como o propio no diz o intuito dessa tecnica e verificar quais
+    # são as principais variaveis (ou componetes) que apresentam um certo nivel de
     # significancia no conjunto de dados
 
 pca = PCA()
@@ -257,6 +257,7 @@ from sklearn.model_selection import cross_val_score
 
 train_features, test_features, train_labels, test_labels = train_test_split(pca_projection, labels, random_state=10)
 
+# Implementando duas tecnicas de classificação
 
 # Arvore de decisão
 
